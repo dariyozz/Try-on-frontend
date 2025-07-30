@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+  --primary: #0ff0fc;
+  --secondary: #a259f7;
+  --accent: #ff4ecd;
+  --bg-gradient: linear-gradient(135deg, #181a2a 0%, #2b2d42 100%);
+  --glass: rgba(40, 45, 80, 0.7);
+  --border: rgba(255,255,255,0.15);
+  --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Montserrat', 'Orbitron', Arial, sans-serif;
+  background: var(--bg-gradient);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.futuristic-card {
+  background: var(--glass);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  border: 1.5px solid var(--border);
+  backdrop-filter: blur(16px);
+  padding: 2.5rem 2rem;
+  margin: 3rem auto;
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+  transition: box-shadow 0.3s, background 0.3s, color 0.3s;
+}
+
+.futuristic-card.dark-mode {
+  background: var(--glass);
+  color: #fff;
+}
+.futuristic-card.light-mode {
+  background: rgba(255,255,255,0.85);
+  color: #222;
+  box-shadow: 0 8px 32px 0 rgba(160, 160, 255, 0.18);
+  border: 1.5px solid #e0e0e0;
+}
+
+:root.light {
+  --primary: #4e54c8;
+  --secondary: #8f94fb;
+  --accent: #ff4ecd;
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+  --glass: rgba(255,255,255,0.85);
+  --border: rgba(0,0,0,0.08);
+  --shadow: 0 8px 32px 0 rgba(160, 160, 255, 0.18);
+}
+
+.futuristic-card:hover {
+  box-shadow: 0 0 32px 8px var(--primary);
+}
+
+h1 {
+  font-family: 'Orbitron', 'Montserrat', Arial, sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px var(--primary), 0 0 2px #fff;
+}
+
+input[type=\"file\"] {
+  display: none;
+}
+
+.upload-label {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #181a2a;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 0.7em 1.5em;
+  margin: 1em 0;
+  cursor: pointer;
+  box-shadow: 0 2px 12px 0 var(--secondary);
+  transition: background 0.3s, color 0.3s;
+}
+
+.upload-label:hover {
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  color: #fff;
+}
+
+.preview-img {
+  margin: 0.5em 0 1em 0;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 var(--primary);
+  max-width: 120px;
+  max-height: 120px;
+  border: 2px solid var(--primary);
+  background: #222;
+}
+
+.futuristic-btn {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #181a2a;
+  font-family: 'Orbitron', 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  border: none;
+  border-radius: 16px;
+  padding: 0.8em 2.2em;
+  margin-top: 1.2em;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 16px 2px var(--accent);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+
+.futuristic-btn:hover {
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  color: #fff;
+  box-shadow: 0 0 24px 4px var(--primary);
+}
+
+.result-img {
+  margin-top: 1.5em;
+  border-radius: 20px;
+  box-shadow: 0 0 32px 2px var(--secondary);
+  max-width: 100%;
+  border: 2px solid var(--secondary);
+  background: #222;
+  animation: fadeIn 1.2s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.error-message {
+  color: var(--accent);
+  margin-top: 1em;
+  font-weight: 600;
+  text-shadow: 0 0 4px var(--accent);
+}
+
+@keyframes futuristic-glow {
+  0% { box-shadow: 0 0 8px 2px var(--primary); }
+  50% { box-shadow: 0 0 24px 8px var(--accent); }
+  100% { box-shadow: 0 0 8px 2px var(--primary); }
+}
+
+.futuristic-btn:active {
+  animation: futuristic-glow 0.6s;
+}
+
+.loading-spinner {
+  margin: 2em auto;
+  border: 6px solid var(--secondary);
+  border-top: 6px solid var(--primary);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 24px 4px var(--primary);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
