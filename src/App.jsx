@@ -20,7 +20,7 @@ function App() {
     formData.append("clothing", clothingFile);
 
     try {
-      const res = await fetch("http://localhost:8000/api/tryon", {
+      const res = await fetch("https://try-on-backend-r851.onrender.com/api/tryon", {
         method: "POST",
         body: formData,
       });
